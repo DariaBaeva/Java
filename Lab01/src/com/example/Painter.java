@@ -26,7 +26,8 @@ public class Painter {
             }
         }
         if (assortmentFiles.isEmpty()) {
-            throw new FileNotFoundException("assortment files not found");
+            System.out.println("Error! Empty assortment folder");
+            System.exit(0);
         }
         colorsFile = new File(colors);
         if (!colorsFile.exists() || !colorsFile.getName().equals("color.txt")) {
@@ -67,9 +68,10 @@ public class Painter {
                     }
                 }
             }
-            if (products.isEmpty()) {
-                throw new DataFormatException("no correct data in assortment");
-            }
+        }
+        if (products.isEmpty()) {
+            System.out.println("Error! No correct data in assortment");
+            System.exit(0);
         }
     }
 
